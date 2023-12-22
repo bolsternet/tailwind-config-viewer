@@ -9,6 +9,7 @@ program
   .description('Serve the viewer')
   .option('-p, --port <port>', 'Port to run the viewer on', 3000)
   .option('-o, --open', 'Open the viewer in default browser')
+  .option('-r, --prefix <route prefix>', 'Add a router prefix', '')
   .action(args => {
     require('../server')({
       port: args.port,
@@ -17,7 +18,8 @@ program
         delete require.cache[configPath]
         return require(configPath)
       },
-      shouldOpen: args.open
+      shouldOpen: args.open,
+      routerPrefix: args.prefix
     }).start()
   })
 
