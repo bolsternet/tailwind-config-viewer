@@ -38,7 +38,7 @@ function createServer ({
         }
 
         app.listen(port, async () => {
-          console.log('Server Started ∹ http://localhost:' + port.toString())
+          console.log('Server Started ∹ http://localhost:' + port.toString() + routerPrefix)
 
           if (shouldOpen) {
             open('http://localhost:' + port.toString())

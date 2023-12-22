@@ -19,7 +19,7 @@ program
         return require(configPath)
       },
       shouldOpen: args.open,
-      routerPrefix: args.prefix
+      routerPrefix: args.prefix,
     }).start()
   })
 
